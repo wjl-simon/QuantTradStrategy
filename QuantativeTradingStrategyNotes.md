@@ -178,7 +178,7 @@ When a trader sells an option contract that he is not long, he is said to be ope
 Net position is the difference between total open long (receivable) and open short (payable) positions in a given asset (security, foreign exchange currency, commodity, etc.) held by an individual.净部位（持仓、头寸）是个人或法人持有的指定资产（证券、外汇货币、商品等）中的全部敞口做多与做空部位（持仓、头寸）之差。  
 ```
 个人观点
-部位（持仓、头寸）的三大属性一是方向（position direction），是做多还是做空；二是规模或大小（position size），头寸中的“寸”即是此意；三是建立时的价格位置（price level），部位中的“位”即是此意。翻译整理自 Position (finance)
+部位（持仓、头寸、仓位）的三大属性一*是方向（position direction）*，是做多还是做空；二是*规模或大小（position size）*，头寸中的“寸”即是此意；三是建立时的*价格位置（price level）*，部位中的“位”（也即仓位）即是此意。翻译整理自 Position (finance)
 ```
 
 ### 0.13 股票
@@ -253,6 +253,42 @@ $$股票价格=股息/利息率$$
 
 CTA(Commodity Trading Advisor)即商品交易顾问，是由专业的管理人以追求绝对收益为目标，运用客户委托的资金投资于期货市场、期权市场，并收取相应投资顾问费用的一种基金形式。由于CTA主要交易对象是期货及期权合约，因此CTA基金现在通常也被称作管理期货(Managed Futures)基金。
 
+### 0.18 Order Types
+订单可分为三大类：市价单（Market order）、限价单（Limit order）、停价单（Stop order）
+
+* A **market order** is an order to buy or sell a security immediately. This type of order guarantees that the order will be executed, but does not guarantee the execution price. A market order **generally will execute at or near the current bid (for a sell order) or ask (for a buy order) price**. 
+ 
+However, it is important for investors to remember that **the last-traded price is not necessarily the price at which a market order will be executed**.  
+
+* A **limit order** is an order to buy or sell a security at a specific price or better. **A buy limit order can only be executed at the limit price or lower, and a sell limit order can only be executed at the limit price or higher.** 
+ 
+
+Example: An investor wants to purchase shares of ABC stock for no more than $10. The investor could submit a limit order for this amount and this order will only execute if the price of ABC stock is $10 or lower.  
+
+* **Stop orders** come in a few different variations, but they are all effectively **conditional based on a price that is not yet available in the market when the order is originally placed**. Once the future price (known as the *stop price*) is available, a stop order will be triggered, but depending on its type, the broker will execute them differently.
+  
+  * A **normal stop order (stop-market order)** will turn into a traditional market order once your stop price is met or exceeded. A stop order can be set as an entry order as well. If you wanted to open a position once the price of a stock is rising, a stop market order could be set above the current market price, which **turns into a regular market order once your stop price has been met**
+  
+  * A **stop-limit order** consists of two prices: a *stop price* and a *limit price*. This order type **can be used to activate a limit order to buy or sell a security once a specific stop price has been met**. 
+
+For example, imagine you purchase shares at $100 and expect the stock to rise. You could place a stop-limit order to **sell the shares** if your forecast was wrong. If you set the stop price at $90 (to be visible when price <= $90) and the limit price at $90.50 (to be filled in when price >= 90.5), *the order will be activated (become visible to the whole market) if the stock trades at $90 or worse*.   
+
+However, a limit order will be filled only if the limit price you selected is available in the market. If the stock drops overnight to $89 per share, that is below your stop price so that the order will be activated, but it will not be filled immediately because there are no buyers at your limit price of $90.50 per share (no buyer asks for >= $90.5). The stop price and the limit price can be the same in this order scenario.
+
+#### Stop-limit order风险
+A stop-limit order has two primary risks: no fills or partial fills. It is possible for your stop price to be triggered and your limit price to remain unavailable. If you used a stop-limit order as a stop loss to exit a long position once the stock started to drop, it might not close your trade.
+
+Even if the limit price is available after a stop price has been triggered, your entire order may not be executed if there wasn't enough liquidity at that price. For example, if you wanted to sell 500 shares at a limit price of $75, but only 300 were filled, then you may suffer further losses on the remaining 200 shares.
+
+#### Stop-market order风险
+A stop order avoids the risks of no fills or partial fills, but because it is a market order, you may have your order filled at a price much worse than what you were expecting. For example, imagine that you have set a stop order at $70 on a stock that you bought for $75 per share.
+
+#### Limit order 与 Stop Order 区别
+* **A limit order is visible to the market** and instructs your broker to fill your buy or sell order at a specific price or better.  
+  
+* A stop order **isn't visible to the market and will activate a market order** once a stop price has been met.  
+
+* A stop order avoids the risks of no fills or partial fills, but **because it is a market order, you may have your order filled at a price much worse** than what you were expecting.
 
 ---
 
