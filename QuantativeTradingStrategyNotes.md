@@ -364,14 +364,16 @@ Stop orders includes *stop-market (or stop-loss) orders* and *stop-limit orders*
 Stop orders are used to **limit losses with a stop-loss** or **lock in profits using a bullish stop**.
 
   
-  * A **normal stop order (stop-market order, stop-loss order)** will turn into a traditional market order **once your stop price is met or exceeded**. A stop order can be set as an entry order as well. If you wanted to open a position once the price of a stock is rising, a stop market order could be set above the current market price, which **turns into a regular market order once your stop price has been met**
+  * A **normal stop order (a.k.a stop-market order or stop-loss order)** will turn into a traditional market order **once your stop price is met or exceeded**. A stop order can be set as an entry order as well. If you wanted to open a position once the price of a stock is rising, a stop market order could be set above the current market price, which **turns into a regular market order once your stop price has been met**
     * **Sell-Stop Orders**:  
         Sell-stop orders protect long positions by **triggering a market sell order if the price falls below a certain level**. The underlying assumption behind this strategy is that, if the price falls this far, it may continue to fall much further. The loss is capped by selling at this price.（可以防止做多后价格一直下降而大亏，及时止损）
 
-        > For example, let's say a trader owns 1,000 shares of ABC stock. They purchased the stock at $30 per share (成本30每股), and it has risen to $45, on rumors of a potential buyout （收购）. The trader wants to lock in a gain of at least $10 per share, so they place a sell-stop order at $41. If the stock drops back below this price, then the order will become a market order and get filled at the current market price, which may be more (or more likely less) than the stop-loss price of $41 （sell-stop提前锁定41-30的利润，防止未来的下降导致利润减少）. In this case, the trader might get $41 for 500 shares and $40.50 for the rest. But they will get to keep most of the gain.
+        > For example, let's say a trader owns 1,000 shares of ABC stock. They purchased the stock at $30 per share (成本30每股), and it has risen to $45, on rumors of a potential buyout （收购）. The trader wants to lock in a gain of at least $10 per share, so they **place a sell-stop order** at $41. If the stock drops back below this price, then the order will become a market order and get filled at the current market price, which may be more (or more likely less) than the stop-loss price of $41 （sell-stop提前锁定41-30的利润，防止未来的下降导致利润减少）. 
+        >
+        > In this case, the trader might get $41 for 500 shares and $40.50 for the rest. But they will get to keep most of the gain.
 
     * **Buy-Stop Orders**  
-    Buy-stop orders are conceptually the same as sell-stop orders. However, they are *used to protect short positions* (做空后如果急速反升那么就在低位卖出，很可能亏了). A **buy-stop order price will be above the current market price and will trigger if the price rises above that level**.
+    Buy-stop orders are conceptually the same as sell-stop orders. However, they are *used to protect short positions* (做空后如果急速反升那么就变成之前在低位卖出，很可能亏了). A **buy-stop order price will be above the current market price and will trigger if the price rises above that level**.
 
 
 
